@@ -1,0 +1,38 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.241.1/containers/docker-existing-dockerfile
+{
+	"name": "Existing Dockerfile",
+
+	// Sets the run context to one level up instead of the .devcontainer folder.
+	"context": "..",
+
+	// Update the 'dockerFile' property if you aren't using the standard 'Dockerfile' filename.
+	"dockerFile": "../Dockerfile",
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Uncomment the next line to run commands after the container is created - for example installing curl.
+	"postCreateCommand": "apt install -y git",
+
+	// Uncomment when using a ptrace-based debugger like C++, Go, and Rust
+	"runArgs": [ "--gpus=all" ],
+
+	// Uncomment to use the Docker CLI from inside the container. See https://aka.ms/vscode-remote/samples/docker-from-docker.
+	"mounts": [ 
+		"source=/tmp/.X11-unix,target=/tmp/.X11-unix,type=bind"
+		//,"source=/mnt/wslg,target=/mnt/wslg,type=bind"
+	],
+
+	// Uncomment to connect as a non-root user if you've added one. See https://aka.ms/vscode-remote/containers/non-root.
+	// "remoteUser": "vscode"
+
+	"containerEnv": {
+		"DISPLAY": "${localEnv:DISPLAY}",
+		"WAYLAND_DISPLAY": "${localEnv:WAYLAND_DISPLAY}",
+		"XDG_RUNTIME_DIR": "${localEnv:XDG_RUNTIME_DIR}",
+		"PULSE_SERVER": "${localEnv:PULSE_SERVER}",
+		"QT_X11_NO_MITSHM": "1",
+		"QT_DEBUG_PLUGINS": "1"
+	}
+}

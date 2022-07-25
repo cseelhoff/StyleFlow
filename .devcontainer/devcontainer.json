@@ -19,9 +19,10 @@
 	"runArgs": [ "--gpus=all" ],
 
 	// Uncomment to use the Docker CLI from inside the container. See https://aka.ms/vscode-remote/samples/docker-from-docker.
+	// "remote.containers.executeInWSL": true
 	"mounts": [ 
-		"source=/tmp/.X11-unix,target=/tmp/.X11-unix,type=bind"
-		//,"source=/mnt/wslg,target=/mnt/wslg,type=bind"
+		"source=/tmp/.X11-unix,target=/tmp/.X11-unix,type=bind",
+		"source=/mnt/wslg,target=/mnt/wslg,type=bind"
 	],
 
 	// Uncomment to connect as a non-root user if you've added one. See https://aka.ms/vscode-remote/containers/non-root.

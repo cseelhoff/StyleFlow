@@ -1,3 +1,5 @@
 stylegan/
 !stylegan/.gitkeep
 __pycache__
+_cudacache
+.stylegan2-cache

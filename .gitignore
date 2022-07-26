@@ -3,4 +3,3 @@ stylegan/
 __pycache__
 _cudacache
 .stylegan2-cache
-.idea
